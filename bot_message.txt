@@ -1,0 +1,67 @@
+對話紀錄
+==========
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+[附帶 game bot/biltzbot.ipynb 內容]
+
+助理：目前訊息中沒有附上「底下的程式」內容或要完成的功能。請貼上要新增的程式碼，或描述這個 code cell 預期要做什麼，我再幫你加入 `game bot/biltzbot.ipynb`。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+[再次附帶 game bot/biltzbot.ipynb 內容]
+
+助理：你貼上的內容仍只有 `biltzbot.ipynb` 目前的內容，沒有要新增的程式碼，也沒有描述新 cell 要完成的功能。請補上程式碼片段，或說明預期行為（例如讀取棋盤顏色後如何操作），我才能正確修改筆記本。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+basex 以及 basey 是左上角寶石中心點的位置。畫面中共有 8x8 顆寶石。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+basex 以及 basey 是左上角寶石中心點的位置。畫面中共有 8x8 顆寶石。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+basex 以及 basey 是左上角寶石中心點的位置。畫面中共有 8x8 顆寶石。
+每顆寶石的間距指正在 gap 中。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+basex 以及 basey 是左上角寶石中心點的位置。畫面中共有 8x8 顆寶石。
+每顆寶石的間距指正在 gap 中。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的程式。
+basex 以及 basey 是左上角寶石中心點的位置。畫面中共有 8x8 顆寶石。
+每顆寶石的間距指正在 gap 中。
+寫一個函式，接受一個 row (用 r 代表), 一個 column (用 c 代表)，回傳 (r,c) 所代表的寶石的位置
+
+助理：已在 `game bot/biltzbot.ipynb` 新增 code cell，定義 `get_gem_position(r, c)`，依列、欄與 `basex`、`basey`、`gap` 回傳寶石中心座標 `(x, y)`。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的函式。
+函式的名稱為 get_gem_color，接受一個 r 以及 c，還有畫面的截圖 im.
+使用 pyautogui 取得 (r,c) 位置寶石的顏色，並回傳。
+[附帶 game bot/biltzbot.ipynb 內容]
+
+助理：已在 `game bot/biltzbot.ipynb` 新增 `get_gem_color(r, c, im)`。函式會用 `get_gem_position(r, c)` 找到寶石座標，並從截圖 `im` 讀取、回傳該位置的顏色。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成 can_move_left 函式。
+can_move_left 接受 r, c 以及 im. 需求如下
+我正在寫一個 match 3 的 game bot.
+畫面中有 8x8 顆寶石。
+每顆寶石有4個可以移動的方向。往上，下，左，以及右。
+請判斷 (r,c) 可否往左移動，若可以，回傳 True，否則回傳 False.
+im 是螢幕截圖，可以取得寶石的中心點的 color
+[附帶 game bot/biltzbot.ipynb 內容]
+
+助理：已在 `game bot/biltzbot.ipynb` 新增 `can_move_left(r, c, im)`。函式會模擬與左側寶石交換，檢查交換後任一顆寶石是否形成連續 3 顆以上的橫向或縱向相同顏色；若 `c` 在最左欄或交換不會形成配對，則回傳 `False`。
+
+使用者：依 can_move_left 的規格，完成 can_move_right, can_move_up, and can_move_down
+
+助理：已在 `game bot/biltzbot.ipynb` 新增 code cell，完成 `can_move_right`、`can_move_up` 與 `can_move_down`。三個函式共用 `_can_swap_and_match`：模擬與相鄰寶石交換，檢查交換後是否形成至少三顆連續同色寶石；超出棋盤範圍則回傳 `False`。
+
+使用者：在 @game bot/biltzbot.ipynb 中新增一個 code cell，完成底下的工作。
+先存下目前的時間。
+螢幕截圖
+進入無窮迴圈。
+對於畫面中的每顆寶石 (r,c)，判斷是否 can_move_left, can_move_right, can_move_up, can_move_down
+若其中一個可以，就將寶石 (r,c) 移到對應方向。
+再截圖
+若超過一分鐘，跳出無窮迴圈。
+[附帶 game bot/biltzbot.ipynb 內容]
+
+使用者：請把到目前為止，我與你溝通的所有訊息都存成一個 bot_message.txt
